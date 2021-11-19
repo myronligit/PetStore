@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  petstore-app:
+    build: ../../..
+    container_name: petstore-app
+    environment:
