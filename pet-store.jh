@@ -1,0 +1,57 @@
+entity ApiResponse {
+    code Integer
+    type String
+    message String
+}
+
+entity Category {
+    id Integer
+    name String
+}
+
+entity Pet {
+    id Integer
+    name String required
+    status PetStatus
+}
+
+entity Tag {
+    id Integer
+    name String
+}
+
+entity Order {
+    id Integer
+    petId Integer
+    quantity Integer
+    shipDate String
+    status OrderStatus
+    complete Boolean
+}
+
+entity User {
+    id Integer
+    username String
+    firstName String
+    lastName String
+    email String
+    password String
+    phone String
+    userStatus Integer
+}
+
+relationship ManyToOne {
+	Pet{category} to Category{pets},
+}
+
+relationship ManyToMany {
+	Pet{tags} to Tag{pets},
+}
+
+enum PetStatus {
+    AVAILABLE, PENDING, SOLD
+}
+
+enum OrderStatus {
+    PLACED, APPROVED, DELIVERED
+}

@@ -53,6 +53,27 @@ export class UserService {
         return UserMapper.fromEntityToDTO(this.flatAuthorities(result));
     }
 
+    async saveAll(userDTOs: UserDTO[], creator?: string): Promise<UserDTO[] | undefined> {
+        let users: User[] = [];
+        userDTOs.forEach(u => {
+          const user = this.convertInAuthorities(UserMapper.fromDTOtoEntity(u));
+          if (creator) {
+            if (!user.createdBy) {
+              user.createdBy = creator;
+            }
+            user.lastModifiedBy = creator;
+          }
+          users.push(user);
+        })
+        const savedUsers = await this.userRepository.save(users);
+        let results: UserDTO[] = [];
+        savedUsers.forEach(su => {
+          const userDTO = UserMapper.fromEntityToDTO(this.flatAuthorities(su));
+          results.push(userDTO);
+        })
+        return results;
+    }
+
     async update(userDTO: UserDTO, updater?: string): Promise<UserDTO | undefined> {
         return this.save(userDTO, updater);
     }

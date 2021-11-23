@@ -1,0 +1,47 @@
+{
+  "name": "Pet",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PetStatus",
+      "fieldValues": "AVAILABLE,PENDING,SOLD"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "pets",
+      "relationshipName": "category"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "pets",
+      "relationshipName": "tags",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "pet",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "test",
+  "clientRootFolder": "test",
+  "databaseType": "sql",
+  "changelogDate": "20211121060909"
+}

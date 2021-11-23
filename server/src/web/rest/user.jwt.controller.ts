@@ -24,4 +24,16 @@ export class UserJWTController {
         res.setHeader('Authorization', 'Bearer ' + jwt.id_token);
         return res.json(jwt);
     }
+
+    @Post('/user/login')
+    @ApiOperation({ title: 'Authorization api retrieving token' })
+    @ApiResponse({
+        status: 201,
+        description: 'Authorized',
+    })
+    async login(@Req() req: Request, @Body() user: UserLoginDTO, @Res() res: Response): Promise<any> {
+        const jwt = await this.authService.login(user);
+        res.setHeader('Authorization', 'Bearer ' + jwt.id_token);
+        return res.json(jwt);
+    }
 }

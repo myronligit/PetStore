@@ -10,6 +10,7 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
 
     user1: User = {
         login: 'system',
+        username: 'system',
         password: 'system',
         firstName: 'System',
         lastName: 'System',
@@ -23,6 +24,7 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
 
     user2: User = {
         login: 'anonymoususer',
+        username: 'anonymoususer',
         password: 'anonymoususer',
         firstName: 'Anonymous',
         lastName: 'User',
@@ -36,6 +38,7 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
 
     user3: User = {
         login: 'admin',
+        username: 'admin',
         password: 'admin',
         firstName: 'Administrator',
         lastName: 'Administrator',
@@ -49,6 +52,7 @@ export class SeedUsersRoles1570200490072 implements MigrationInterface {
 
     user4: User = {
         login: 'user',
+        username: 'user',
         password: 'user',
         firstName: 'User',
         lastName: 'User',

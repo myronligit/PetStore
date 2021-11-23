@@ -44,6 +44,8 @@
     "buildTool": "maven",
     "enableHibernateCache": true,
     "reactive": false,
-    "languages": ["en", "fr"]
+    "languages": ["en", "fr"],
+    "entities": ["ApiResponse", "Category", "Pet", "Tag", "Order"],
+    "lastLiquibaseTimestamp": 1637309668000
   }
 }

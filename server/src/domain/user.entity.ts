@@ -35,4 +35,10 @@ export class User extends BaseEntity {
     resetKey?: string;
     @Column({ nullable: true })
     resetDate?: Date;
+    @Column({ unique: true })
+    username: string
+    @Column({ nullable: true })
+    phone?: string
+    @Column({ nullable: true })
+    userStatus?: number
 }

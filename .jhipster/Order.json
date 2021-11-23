@@ -1,0 +1,44 @@
+{
+  "name": "Order",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "petId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "shipDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderStatus",
+      "fieldValues": "PLACED,APPROVED,DELIVERED"
+    },
+    {
+      "fieldName": "complete",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "jhi_order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "test",
+  "clientRootFolder": "test",
+  "databaseType": "sql",
+  "changelogDate": "20211121060911"
+}

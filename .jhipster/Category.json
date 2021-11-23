@@ -1,0 +1,34 @@
+{
+  "name": "Category",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pet",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "pets"
+    }
+  ],
+  "entityTableName": "category",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "test",
+  "clientRootFolder": "test",
+  "databaseType": "sql",
+  "changelogDate": "20211121060908"
+}

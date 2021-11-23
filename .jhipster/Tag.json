@@ -1,0 +1,35 @@
+{
+  "name": "Tag",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "pet",
+      "otherEntityRelationshipName": "tags",
+      "relationshipName": "pets",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "tag",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "test",
+  "clientRootFolder": "test",
+  "databaseType": "sql",
+  "changelogDate": "20211121060910"
+}
