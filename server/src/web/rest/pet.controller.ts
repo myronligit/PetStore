@@ -11,7 +11,7 @@ import {
   UseGuards,
   Req,
   UseInterceptors,
-  HttpException, UploadedFile
+  HttpException, UploadedFile, Query
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiUseTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
 import { PetDTO } from '../../service/dto/pet.dto';
@@ -62,9 +62,8 @@ export class PetController {
     description: 'The found record',
     type: PetDTO,
   })
-  async findByStatus(@Req() req: Request): Promise<PetDTO []>  {
-    let statusParam = req.query.status;
-    statusParam = statusParam.replace('[', '').replace(']', '');
+  async findByStatus(@Query('status') status: string): Promise<PetDTO []>  {
+    let statusParam = status.replace('[', '').replace(']', '');
     const statusArray = statusParam.split(',');
     const [results] = await this.petService.findByStatus(statusArray);
     return results;
